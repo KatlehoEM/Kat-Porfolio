@@ -405,6 +405,40 @@ h3{
     transition: background-color 0.3s;
 }
 
+.tech-stack {
+    font-style: italic;
+    color: var(--text-color-third);
+    margin-bottom: 15px;
+}
+
+.misc-projects {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--first-shadow-color);
+}
+
+.misc-projects h2 {
+    color: var(--text-color-second);
+    margin-bottom: 15px;
+}
+
+.misc-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--second-color);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.misc-link:hover {
+    background-color: var(--text-color-third);
+}
+
 .project-link:hover {
     background-color: #0056b3;
 }
@@ -542,13 +576,11 @@ footer{
     .nav-button{
         display: none;
     }
-    .nav-menu.responsive{
-        left: 0;
-    }
+
     .nav-menu{
         position: fixed;
         top: 80px;
-        left: -100%;
+        left: 0;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -558,6 +590,12 @@ footer{
         min-height: 450px;
         height: 90vh;
         transition: .3s;
+        visibility: hidden;
+    }
+    
+    .nav-menu.responsive{
+        visibility: visible;
+        opacity: 1;
     }
     .nav_menu_list{
         flex-direction: column;

@@ -1,14 +1,21 @@
 /* ----- NAVIGATION BAR FUNCTION ----- */
+const menuBtn = document.getElementById("myNavMenu");
 function myMenuFunction(){
-    var menuBtn = document.getElementById("myNavMenu");
-
+  
     if(menuBtn.className === "nav-menu"){
-      menuBtn.className += " responsive";
+      menuBtn.classList.add("responsive");
     } else {
-      menuBtn.className = "nav-menu";
+      menuBtn.classList.remove("responsive");
     }
   }
 
+const links = document.querySelectorAll(".nav-link");
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuBtn.classList.remove("responsive");
+  });
+});
 /* ----- ADD SHADOW ON NAVIGATION BAR WHILE SCROLLING ----- */
   window.onscroll = function() {headerShadow()};
 
@@ -29,8 +36,6 @@ function myMenuFunction(){
 
     }
   }
-
-
 /* ----- TYPING EFFECT ----- */
  var typingEffect = new Typed(".typedText",{
     strings : [" a Full-Stack Developer"," a Software Engineer"," a Technology Enthusiast"],
@@ -88,30 +93,11 @@ const srRight = ScrollReveal({
 srRight.reveal('.skills-box',{delay: 100})
 srRight.reveal('.form-control',{delay: 100})
 
-
-
-/* ----- CHANGE ACTIVE LINK ----- */
-
-const sections = document.querySelectorAll('section[id]')
-
-function scrollActive() {
-  const scrollY = window.scrollY;
-
-  sections.forEach(current =>{
-    const sectionHeight = current.offsetHeight,
-        sectionTop = current.offsetTop - 50,
-      sectionId = current.getAttribute('id')
-
-    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) { 
-
-        document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.add('active-link')
-
-    }  else {
-
-      document.querySelector('.nav-menu a[href*=' + sectionId + ']').classList.remove('active-link')
-
-    }
-  })
-}
+var navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    alert("hello");
+  });
+});
 
 window.addEventListener('scroll', scrollActive)
